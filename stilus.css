@@ -1,46 +1,110 @@
-body{
-
-    padding: 0;
-    margin: 0;
+body {
+  padding: 0;
+  margin: 0;
+  background-color: burlywood;
 }
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-main{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: 
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
     "h h"
     "n n"
     "a as"
-    "f f"
-    ;
-
+    "f f";
 }
-article{
-    grid-area: a;
+article {
+  grid-area: a;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+}
+
+header {
+  grid-area: h;
+}
+nav {
+  grid-area: n;
+}
+
+aside {
+  grid-area: as;
+}
+footer {
+  grid-area: f;
+}
+div img {
+  height: 100%;
+  width: 100%;
+}
+.aru {
+  align-items: center;
+  background-color: azure;
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 5px;
+  word-spacing: 15px;
+}
+.aru h1 {
+  text-align: center;
+}
+
+.lista ul {
+  background-color: aqua;
+  margin: auto;
+  margin-right: 40px;
+  padding: auto;
+
+  border: 1px solid gray;
+}
+.lista li {
+  margin: auto;
+  padding: auto;
+}
+.gombok {
+  word-spacing: 40px;
+  margin-right: 40px;
+  padding-right: 40px;
+  padding-left: 20px;
+}
+span {
+  font-size: large;
+  text-align: right;
+  margin-right: 40px;
+  padding-right: 40px;
+}
+
+@media screen and (max-width: 400px) {
+  main {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    
-
-
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "h h"
+      "n n"
+      "as as"
+      "a a"
+      "f f";
+  }
+  article {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
 }
-
-header,nav,article,aside,footer{
-    border: 1px solid gray;
-}
-
-header{
-    grid-area: h;
-}
-nav{
-    grid-area: n;
-}
-
-aside{
-    grid-area: as;
-}
-footer{
-    grid-area: f;
+@media screen and (max-width: 200px) {
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "h h"
+      "n n"
+      "as as"
+      "a a"
+      "f f";
+  }
+  article {
+    display: grid;
+    grid-template-columns: auto;
+  }
 }
